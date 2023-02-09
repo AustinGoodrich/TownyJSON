@@ -14,7 +14,7 @@ $apiKeys = true;
 
 // Are you using TheNewEconomy with Towny?
 // (Requires you give MySQL Read-only user access to TNE Database)
-$tne = true;
+$tne = false;
 
 
 // CONNECTION SETTINGS
