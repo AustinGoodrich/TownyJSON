@@ -35,6 +35,7 @@ $pdo = new PDO($dsn, $username, $password);
 // You will need to capitalize these if it fails to find your database.
 $db_towny = "towny";
 $db_tne = "tne";
+$db_discordsrv = "discordsrv";
 
 $table_towny_towns = "TOWNY_TOWNS";
 $table_towny_townblocks = "TOWNY_TOWNBLOCKS";
@@ -42,6 +43,7 @@ $table_towny_nations = "TOWNY_NATIONS";
 $table_towny_residents = "TOWNY_RESIDENTS";
 $table_tne_ecoids = "TNE_ECOIDS";
 $table_tne_balances = "TNE_BALANCES";
+$table_discordsrv_accounts = "discordsrv_accounts";
 
 // If you modify the querys below, use https://github.com/TownyAdvanced/Towny/blob/master/src/com/palmergames/bukkit/towny/db/SQL_Schema.java for reference
 // Make sure you don't put any WHERE statements in the querys as that will break stuff
@@ -86,6 +88,13 @@ $query_residents = "
     SELECT name, town, 'town-rank', 'nation-ranks', lastOnline, registered, title, surname, friends, uuid
     FROM ".$db_towny.".".$table_towny_residents."
     %WHERE
+";
+
+// Query for getting discord data from DiscordSRV
+$query_discord = "
+   SELECT discord, uuid
+   FROM ".$db_discordsrv.".".$table_discordsrv_accounts."
+   %WHERE
 ";
 
 // READ-ONLY USER MYSQL COMMAND LINE
